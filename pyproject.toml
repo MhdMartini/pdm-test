@@ -1,0 +1,17 @@
+[project]
+name = "pdm"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [{ name = "name", email = "email" }]
+
+requires-python = ">=3.10"
+readme = "README.md"
+license = { text = "MIT" }
+
+dependencies = [
+    'tables; sys_platform!="darwin" or platform_machine!="arm64"',
+    'tables @ git+https://github.com/PyTables/PyTables.git@v3.9.0 ; sys_platform=="darwin" and platform_machine=="arm64"',
+]
+
+[tool.pdm]
+distribution = false
